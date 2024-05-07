@@ -97,42 +97,51 @@ body{
   width: 10px; 
   z-index: 8;
 }  
-.rainbow-text{
-	position: relative;
-	color: #000;
-	background: #fff;
-	mix-blend-mode: multiply;
-  overflow: hidden; 
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  padding: 2px 4px 6px;
-  margin: -2px -4px -6px;
-  font-size: 55px;
+.img-teacher{
+  display: block;
+  margin: auto;
+  width: 100%;
 }
-.rainbow-text::before{
-	content: "";
-	position: absolute;
-	top:0;right:0;bottom:0;left:-100%;
-	background: white repeating-linear-gradient(90deg, #14ffe9 0%, #ffc800 16.66666%, #ff00e0 33.33333%, #14ffe9 50.0%);
-	mix-blend-mode: screen;
-	pointer-events: none;
-  animation: move 10s linear infinite;
+.teacherx{
+  color: #000;
+  font-size: 22px;
+}
+.frame{  
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+} 
+.frame img{  
+  width: 90%;
+  height: 250px;
+  object-fit: cover;
+  position: relative;
+  z-index: 10;
+  display: block;
+  margin: auto;
+} 
+.frame img:nth-child(2){  
+  position: absolute;
+  z-index: 4;
+  top: 90px;
+  height: 150px;
+  left: auto;
+  right: auto;
+  display: block;
+  margin: auto;
+  overflow: hidden;
+}
+.icx img{
+  width: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+  height: 50px;
+  margin-right: 10px;
 }
 
-@keyframes move{
-  0%{transform: translateX(0);}
-  100%{transform: translateX(50%);}
-}
-
-@supports not (mix-blend-mode: multiply) {
-	.rainbow-text{
-	-webkit-text-fill-color: transparent;
-	background-clip: text !important;
-	background: white repeating-linear-gradient(90deg, #14ffe9, #ffc800, #ff00e0, #14ffe9);
-    text-shadow: none;
-	}
-	.rainbow-text::before{ content: none; }
-}
- 
 
 /*
 
@@ -357,3 +366,41 @@ background-size:100%;
 }
 
 /*************footer End*****************/
+
+.rainbow-text{
+	position: relative;
+	color: #000;
+	background: #fff;
+	mix-blend-mode: multiply;
+  overflow: hidden; 
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  padding: 22px 4px 6px;
+  margin: -2px -4px -6px;
+  font-size: 55px;
+}
+.rainbow-text::before{
+	content: "";
+	position: absolute;
+	top:0;right:0;bottom:0;left:-100%;
+	background: white repeating-linear-gradient(90deg, #14ffe9 0%, #ffc800 16.66666%, #ff00e0 33.33333%, #14ffe9 50.0%);
+	mix-blend-mode: screen;
+	pointer-events: none;
+  animation: move 10s linear infinite;
+}
+
+
+@keyframes move{
+  0%{transform: translateX(0);}
+  100%{transform: translateX(50%);}
+}
+
+@supports not (mix-blend-mode: multiply) {
+	.rainbow-text{
+	-webkit-text-fill-color: transparent;
+	background-clip: text !important;
+	background: white repeating-linear-gradient(90deg, #14ffe9, #ffc800, #ff00e0, #14ffe9);
+    text-shadow: none;
+	}
+	.rainbow-text::before{ content: none; }
+}
+ 
